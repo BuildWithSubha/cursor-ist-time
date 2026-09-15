@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Cursor IST Time",
+  "version": "1.0.0",
+  "description": "Rewrites UTC timestamps on cursor.com dashboard pages to IST (UTC+5:30).",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cursor IST Time",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://cursor.com/*", "https://www.cursor.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
