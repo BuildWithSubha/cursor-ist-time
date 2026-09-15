@@ -1,5 +1,4 @@
 # Cursor IST Time
-
 Chrome extension (Manifest V3) that rewrites **UTC timestamps** on [cursor.com](https://cursor.com) dashboard pages to **IST (Indian Standard Time, UTC+5:30)**.
 
 Cursor’s usage dashboard (`/dashboard/usage` and related pages) prints times in UTC — for example `Sep 15, 07:06 PM`. This extension converts that in place to `Sep 16, 12:36 AM IST` so the zone is obvious.
@@ -69,3 +68,13 @@ README.md
 ```
 
 No build step, no npm, no bundler. Edit the files and click **Reload** on `chrome://extensions`.
+
+## Export from this workspace
+
+If you only have the Origin/cloud workspace copy, zip the extension folder (exclude `.git`):
+
+```bash
+zip -r cursor-ist-time.zip manifest.json content.js popup.html popup.js icons README.md
+```
+
+Then load that unzipped folder as unpacked, or keep the zip for sharing.
